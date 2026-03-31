@@ -1,0 +1,72 @@
+[
+  {
+    "batch_idx": 0,
+    "filename": "batch_20260331_195925_000.csv",
+    "size": 50,
+    "is_drifted": false,
+    "drift_type": "none"
+  },
+  {
+    "batch_idx": 1,
+    "filename": "batch_20260331_195925_001.csv",
+    "size": 50,
+    "is_drifted": false,
+    "drift_type": "none"
+  },
+  {
+    "batch_idx": 2,
+    "filename": "batch_20260331_195925_002.csv",
+    "size": 50,
+    "is_drifted": false,
+    "drift_type": "none"
+  },
+  {
+    "batch_idx": 3,
+    "filename": "batch_20260331_195925_003.csv",
+    "size": 50,
+    "is_drifted": false,
+    "drift_type": "none"
+  },
+  {
+    "batch_idx": 4,
+    "filename": "batch_20260331_195925_004.csv",
+    "size": 50,
+    "is_drifted": false,
+    "drift_type": "none"
+  },
+  {
+    "batch_idx": 5,
+    "filename": "batch_20260331_195925_005.csv",
+    "size": 50,
+    "is_drifted": true,
+    "drift_type": "covariate"
+  },
+  {
+    "batch_idx": 6,
+    "filename": "batch_20260331_195925_006.csv",
+    "size": 50,
+    "is_drifted": true,
+    "drift_type": "covariate"
+  },
+  {
+    "batch_idx": 7,
+    "filename": "batch_20260331_195925_007.csv",
+    "size": 50,
+    "is_drifted": true,
+    "drift_type": "covariate"
+  },
+  {
+    "batch_idx": 8,
+    "filename": "batch_20260331_195925_008.csv",
+    "size": 50,
+    "is_drifted": true,
+    "drift_type": "covariate"
+  },
+  {
+    "batch_idx": 9,
+    "filename": "batch_20260331_195925_009.csv",
+    "size": 50,
+    "is_drifted": true,
+    "drift_type": "covariate"
+  }
+]

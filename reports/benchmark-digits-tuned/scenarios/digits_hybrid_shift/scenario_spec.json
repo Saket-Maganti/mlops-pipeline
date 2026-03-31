@@ -1,0 +1,12 @@
+{
+  "name": "digits_hybrid_shift",
+  "drift_type": "hybrid",
+  "batch_size": 96,
+  "n_batches": 10,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.95,
+  "label_delay_batches": 1,
+  "seed": 72,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

@@ -1,0 +1,12 @@
+{
+  "name": "adaptive_recovery_window",
+  "drift_type": "concept",
+  "batch_size": 56,
+  "n_batches": 12,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.95,
+  "label_delay_batches": 1,
+  "seed": 46,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

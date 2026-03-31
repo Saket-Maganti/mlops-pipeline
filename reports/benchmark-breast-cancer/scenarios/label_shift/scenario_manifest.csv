@@ -1,0 +1,11 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+label_shift,0,48,False,0.0,2,batch_00.csv
+label_shift,1,48,False,0.0,3,batch_01.csv
+label_shift,2,48,True,0.55,4,batch_02.csv
+label_shift,3,48,True,0.649,5,batch_03.csv
+label_shift,4,48,True,0.748,6,batch_04.csv
+label_shift,5,48,True,0.847,7,batch_05.csv
+label_shift,6,48,True,0.946,8,batch_06.csv
+label_shift,7,48,True,1.045,9,batch_07.csv
+label_shift,8,48,True,1.144,10,batch_08.csv
+label_shift,9,48,True,1.243,11,batch_09.csv

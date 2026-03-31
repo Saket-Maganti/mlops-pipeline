@@ -1,0 +1,88 @@
+{
+  "generated_at": "20260331_201812",
+  "overall_leaderboard": [
+    {
+      "policy": "no_retrain",
+      "avg_rank": 1.25,
+      "avg_composite_score": 0.365,
+      "avg_final_holdout_f1": 0.9677,
+      "avg_final_post_drift_f1": 0.4666,
+      "avg_train_seconds": 0.0,
+      "avg_promoted_retrains": 0.0,
+      "avg_inference_ms": 16.5785
+    },
+    {
+      "policy": "scheduled",
+      "avg_rank": 2.5,
+      "avg_composite_score": 0.3376,
+      "avg_final_holdout_f1": 0.8822,
+      "avg_final_post_drift_f1": 0.4403,
+      "avg_train_seconds": 0.2513,
+      "avg_promoted_retrains": 0.5,
+      "avg_inference_ms": 17.5045
+    },
+    {
+      "policy": "threshold",
+      "avg_rank": 2.75,
+      "avg_composite_score": 0.329,
+      "avg_final_holdout_f1": 0.907,
+      "avg_final_post_drift_f1": 0.4418,
+      "avg_train_seconds": 1.0767,
+      "avg_promoted_retrains": 2.0,
+      "avg_inference_ms": 23.7045
+    },
+    {
+      "policy": "challenger",
+      "avg_rank": 4.25,
+      "avg_composite_score": 0.3153,
+      "avg_final_holdout_f1": 0.8433,
+      "avg_final_post_drift_f1": 0.4263,
+      "avg_train_seconds": 0.8442,
+      "avg_promoted_retrains": 1.5,
+      "avg_inference_ms": 22.1323
+    },
+    {
+      "policy": "adaptive_window",
+      "avg_rank": 4.25,
+      "avg_composite_score": 0.3152,
+      "avg_final_holdout_f1": 0.8433,
+      "avg_final_post_drift_f1": 0.4263,
+      "avg_train_seconds": 0.8901,
+      "avg_promoted_retrains": 1.5,
+      "avg_inference_ms": 22.0168
+    }
+  ],
+  "scenario_winners": [
+    {
+      "scenario": "digits_adaptive_window",
+      "policy": "no_retrain",
+      "composite_score": 0.3624,
+      "final_holdout_f1": 0.9684,
+      "final_post_drift_f1": 0.4534
+    },
+    {
+      "scenario": "digits_concept_shift",
+      "policy": "no_retrain",
+      "composite_score": 0.3603,
+      "final_holdout_f1": 0.9733,
+      "final_post_drift_f1": 0.436
+    },
+    {
+      "scenario": "digits_hybrid_shift",
+      "policy": "no_retrain",
+      "composite_score": 0.3664,
+      "final_holdout_f1": 0.9621,
+      "final_post_drift_f1": 0.5261
+    },
+    {
+      "scenario": "digits_late_break_shift",
+      "policy": "threshold",
+      "composite_score": 0.3876,
+      "final_holdout_f1": 0.9757,
+      "final_post_drift_f1": 0.4863
+    }
+  ],
+  "dataset_name": "digits",
+  "policy_count": 5,
+  "scenario_count": 4
+}

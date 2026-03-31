@@ -1,0 +1,12 @@
+{
+  "name": "portfolio_concept_shift",
+  "drift_type": "concept",
+  "batch_size": 64,
+  "n_batches": 10,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.8,
+  "label_delay_batches": 1,
+  "seed": 63,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

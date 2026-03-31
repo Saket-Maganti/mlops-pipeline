@@ -1,0 +1,12 @@
+{
+  "name": "digits_adaptive_window",
+  "drift_type": "concept",
+  "batch_size": 96,
+  "n_batches": 12,
+  "drift_start_batch": 3,
+  "base_magnitude": 1.1,
+  "label_delay_batches": 1,
+  "seed": 74,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

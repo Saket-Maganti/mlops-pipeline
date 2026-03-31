@@ -1,0 +1,18 @@
+FROM python:3.11-slim
+
+LABEL description="MLOps training container"
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends gcc && rm -rf /var/lib/apt/lists/*
+
+COPY requirements/training.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY src/ ./src/
+COPY configs/ ./configs/
+COPY scripts/ ./scripts/
+
+RUN mkdir -p /app/model_artifacts /app/data /app/reports
+
+ENTRYPOINT ["python", "src/training/train.py"]

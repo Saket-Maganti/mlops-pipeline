@@ -1,0 +1,11 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+hybrid_regime_shift,0,56,False,0.0,2,batch_00.csv
+hybrid_regime_shift,1,56,False,0.0,3,batch_01.csv
+hybrid_regime_shift,2,56,True,0.75,4,batch_02.csv
+hybrid_regime_shift,3,56,True,0.885,5,batch_03.csv
+hybrid_regime_shift,4,56,True,1.02,6,batch_04.csv
+hybrid_regime_shift,5,56,True,1.155,7,batch_05.csv
+hybrid_regime_shift,6,56,True,1.29,8,batch_06.csv
+hybrid_regime_shift,7,56,True,1.425,9,batch_07.csv
+hybrid_regime_shift,8,56,True,1.56,10,batch_08.csv
+hybrid_regime_shift,9,56,True,1.695,11,batch_09.csv

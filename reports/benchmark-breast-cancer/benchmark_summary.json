@@ -1,0 +1,109 @@
+{
+  "generated_at": "20260331_200224",
+  "overall_leaderboard": [
+    {
+      "policy": "challenger",
+      "avg_rank": 2.29,
+      "avg_composite_score": 0.4828,
+      "avg_final_holdout_f1": 0.7522,
+      "avg_final_post_drift_f1": 0.7126,
+      "avg_train_seconds": 0.3582,
+      "avg_promoted_retrains": 2.71,
+      "avg_inference_ms": 16.363
+    },
+    {
+      "policy": "no_retrain",
+      "avg_rank": 2.43,
+      "avg_composite_score": 0.4584,
+      "avg_final_holdout_f1": 0.9508,
+      "avg_final_post_drift_f1": 0.5994,
+      "avg_train_seconds": 0.0,
+      "avg_promoted_retrains": 0.0,
+      "avg_inference_ms": 16.6053
+    },
+    {
+      "policy": "scheduled",
+      "avg_rank": 3.0,
+      "avg_composite_score": 0.4493,
+      "avg_final_holdout_f1": 0.8985,
+      "avg_final_post_drift_f1": 0.6493,
+      "avg_train_seconds": 0.2005,
+      "avg_promoted_retrains": 2.14,
+      "avg_inference_ms": 16.3419
+    },
+    {
+      "policy": "threshold",
+      "avg_rank": 3.57,
+      "avg_composite_score": 0.4245,
+      "avg_final_holdout_f1": 0.9226,
+      "avg_final_post_drift_f1": 0.7136,
+      "avg_train_seconds": 0.6043,
+      "avg_promoted_retrains": 5.43,
+      "avg_inference_ms": 16.3199
+    },
+    {
+      "policy": "adaptive_window",
+      "avg_rank": 3.71,
+      "avg_composite_score": 0.4495,
+      "avg_final_holdout_f1": 0.7825,
+      "avg_final_post_drift_f1": 0.7162,
+      "avg_train_seconds": 0.4834,
+      "avg_promoted_retrains": 4.29,
+      "avg_inference_ms": 16.373
+    }
+  ],
+  "scenario_winners": [
+    {
+      "scenario": "adaptive_recovery_window",
+      "policy": "scheduled",
+      "composite_score": 0.3813,
+      "final_holdout_f1": 0.6952,
+      "final_post_drift_f1": 0.5589
+    },
+    {
+      "scenario": "concept_drift",
+      "policy": "no_retrain",
+      "composite_score": 0.4045,
+      "final_holdout_f1": 0.965,
+      "final_post_drift_f1": 0.4966
+    },
+    {
+      "scenario": "hybrid_regime_shift",
+      "policy": "challenger",
+      "composite_score": 0.4391,
+      "final_holdout_f1": 0.8188,
+      "final_post_drift_f1": 0.6026
+    },
+    {
+      "scenario": "label_shift",
+      "policy": "no_retrain",
+      "composite_score": 0.6714,
+      "final_holdout_f1": 0.9505,
+      "final_post_drift_f1": 0.9787
+    },
+    {
+      "scenario": "late_breaking_regime_shift",
+      "policy": "no_retrain",
+      "composite_score": 0.4455,
+      "final_holdout_f1": 0.9648,
+      "final_post_drift_f1": 0.6177
+    },
+    {
+      "scenario": "mild_covariate",
+      "policy": "threshold",
+      "composite_score": 0.666,
+      "final_holdout_f1": 0.9718,
+      "final_post_drift_f1": 0.9511
+    },
+    {
+      "scenario": "severe_covariate",
+      "policy": "challenger",
+      "composite_score": 0.5944,
+      "final_holdout_f1": 0.867,
+      "final_post_drift_f1": 0.8066
+    }
+  ],
+  "dataset_name": "breast_cancer",
+  "policy_count": 5,
+  "scenario_count": 7
+}

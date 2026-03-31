@@ -1,0 +1,13 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+late_breaking_regime_shift,0,56,False,0.0,1,batch_00.csv
+late_breaking_regime_shift,1,56,False,0.0,2,batch_01.csv
+late_breaking_regime_shift,2,56,False,0.0,3,batch_02.csv
+late_breaking_regime_shift,3,56,False,0.0,4,batch_03.csv
+late_breaking_regime_shift,4,56,True,0.9,5,batch_04.csv
+late_breaking_regime_shift,5,56,True,1.062,6,batch_05.csv
+late_breaking_regime_shift,6,56,True,1.224,7,batch_06.csv
+late_breaking_regime_shift,7,56,True,1.386,8,batch_07.csv
+late_breaking_regime_shift,8,56,True,1.548,9,batch_08.csv
+late_breaking_regime_shift,9,56,True,1.71,10,batch_09.csv
+late_breaking_regime_shift,10,56,True,1.872,11,batch_10.csv
+late_breaking_regime_shift,11,56,True,2.034,12,batch_11.csv

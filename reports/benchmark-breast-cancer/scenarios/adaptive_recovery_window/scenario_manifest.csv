@@ -1,0 +1,13 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+adaptive_recovery_window,0,56,False,0.0,1,batch_00.csv
+adaptive_recovery_window,1,56,False,0.0,2,batch_01.csv
+adaptive_recovery_window,2,56,True,0.95,3,batch_02.csv
+adaptive_recovery_window,3,56,True,1.121,4,batch_03.csv
+adaptive_recovery_window,4,56,True,1.292,5,batch_04.csv
+adaptive_recovery_window,5,56,True,1.463,6,batch_05.csv
+adaptive_recovery_window,6,56,True,1.634,7,batch_06.csv
+adaptive_recovery_window,7,56,True,1.805,8,batch_07.csv
+adaptive_recovery_window,8,56,True,1.976,9,batch_08.csv
+adaptive_recovery_window,9,56,True,2.147,10,batch_09.csv
+adaptive_recovery_window,10,56,True,2.318,11,batch_10.csv
+adaptive_recovery_window,11,56,True,2.489,12,batch_11.csv

@@ -1,0 +1,58 @@
+# MLOps Pipeline .gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+coverage.xml
+
+# Data (don't commit production data)
+data/production/*.csv
+data/production/batch_*.csv
+
+# Model artifacts (stored in S3/MLflow)
+model_artifacts/
+*.pkl
+*.joblib
+
+# Reports
+reports/drift/*.html
+reports/drift/*.json
+
+# Logs
+logs/
+*.log
+*.jsonl
+
+# MLflow
+mlruns/
+mlflow.db
+
+# Airflow
+airflow/logs/
+airflow/airflow.db
+
+# Docker
+.docker/
+
+# AWS
+.aws/
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,9 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+portfolio_mild_covariate,0,64,False,0.0,0,batch_00.csv
+portfolio_mild_covariate,1,64,False,0.0,1,batch_01.csv
+portfolio_mild_covariate,2,64,True,0.28,2,batch_02.csv
+portfolio_mild_covariate,3,64,True,0.3304,3,batch_03.csv
+portfolio_mild_covariate,4,64,True,0.3808,4,batch_04.csv
+portfolio_mild_covariate,5,64,True,0.4312,5,batch_05.csv
+portfolio_mild_covariate,6,64,True,0.4816,6,batch_06.csv
+portfolio_mild_covariate,7,64,True,0.532,7,batch_07.csv

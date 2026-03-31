@@ -1,0 +1,95 @@
+benchmark:
+  dataset_name: digits
+  initial_model_type: random_forest
+  initial_n_estimators: 160
+  initial_max_depth: 14
+  retrain_model_type: extra_trees
+  retrain_n_estimators: 220
+  retrain_max_depth: 18
+  degradation_threshold: 0.08
+  retrain_window_rows: 144
+  reference_mix_ratio: 0.35
+  promotion_validation_rows: 48
+  promotion_min_gain: 0.02
+  promotion_max_regression: 0.01
+  train_seconds_cost: 0.015
+  retrain_fixed_cost: 0.02
+  drift_penalty_weight: 0.08
+  recovery_weight: 0.26
+  batch_weight: 0.34
+  final_weight: 0.34
+  stability_weight: 0.10
+  inference_penalty_weight: 0.01
+  policies:
+    - name: no_retrain
+    - name: scheduled
+      interval_batches: 3
+    - name: threshold
+      drift_threshold: 0.24
+      min_labeled_rows: 36
+    - name: adaptive_window
+      drift_threshold: 0.18
+      min_labeled_rows: 72
+      consecutive_drift_trigger: 1
+    - name: challenger
+      drift_threshold: 0.16
+      min_labeled_rows: 84
+      expected_gain_threshold: 0.035
+      cooldown_batches: 2
+  scenarios:
+    - name: mild_covariate
+      drift_type: covariate
+      batch_size: 48
+      n_batches: 8
+      drift_start_batch: 3
+      base_magnitude: 0.20
+      label_delay_batches: 0
+      seed: 41
+    - name: severe_covariate
+      drift_type: covariate
+      batch_size: 48
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.80
+      label_delay_batches: 1
+      seed: 42
+    - name: label_shift
+      drift_type: label
+      batch_size: 48
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.55
+      label_delay_batches: 2
+      seed: 43
+    - name: concept_drift
+      drift_type: concept
+      batch_size: 48
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.70
+      label_delay_batches: 2
+      seed: 44
+    - name: hybrid_regime_shift
+      drift_type: hybrid
+      batch_size: 56
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.75
+      label_delay_batches: 2
+      seed: 45
+    - name: adaptive_recovery_window
+      drift_type: concept
+      batch_size: 56
+      n_batches: 12
+      drift_start_batch: 2
+      base_magnitude: 0.95
+      label_delay_batches: 1
+      seed: 46
+    - name: late_breaking_regime_shift
+      drift_type: hybrid
+      batch_size: 56
+      n_batches: 12
+      drift_start_batch: 4
+      base_magnitude: 0.90
+      label_delay_batches: 1
+      seed: 47

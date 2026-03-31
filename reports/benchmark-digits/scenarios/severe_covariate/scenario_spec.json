@@ -1,0 +1,12 @@
+{
+  "name": "severe_covariate",
+  "drift_type": "covariate",
+  "batch_size": 48,
+  "n_batches": 10,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.8,
+  "label_delay_batches": 1,
+  "seed": 42,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

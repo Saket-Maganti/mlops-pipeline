@@ -1,0 +1,11 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+portfolio_severe_covariate,0,64,False,0.0,1,batch_00.csv
+portfolio_severe_covariate,1,64,False,0.0,2,batch_01.csv
+portfolio_severe_covariate,2,64,True,0.85,3,batch_02.csv
+portfolio_severe_covariate,3,64,True,1.003,4,batch_03.csv
+portfolio_severe_covariate,4,64,True,1.156,5,batch_04.csv
+portfolio_severe_covariate,5,64,True,1.309,6,batch_05.csv
+portfolio_severe_covariate,6,64,True,1.462,7,batch_06.csv
+portfolio_severe_covariate,7,64,True,1.615,8,batch_07.csv
+portfolio_severe_covariate,8,64,True,1.768,9,batch_08.csv
+portfolio_severe_covariate,9,64,True,1.921,10,batch_09.csv

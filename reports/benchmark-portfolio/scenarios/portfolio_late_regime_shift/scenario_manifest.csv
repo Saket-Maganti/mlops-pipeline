@@ -1,0 +1,13 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+portfolio_late_regime_shift,0,64,False,0.0,1,batch_00.csv
+portfolio_late_regime_shift,1,64,False,0.0,2,batch_01.csv
+portfolio_late_regime_shift,2,64,False,0.0,3,batch_02.csv
+portfolio_late_regime_shift,3,64,False,0.0,4,batch_03.csv
+portfolio_late_regime_shift,4,64,True,0.95,5,batch_04.csv
+portfolio_late_regime_shift,5,64,True,1.121,6,batch_05.csv
+portfolio_late_regime_shift,6,64,True,1.292,7,batch_06.csv
+portfolio_late_regime_shift,7,64,True,1.463,8,batch_07.csv
+portfolio_late_regime_shift,8,64,True,1.634,9,batch_08.csv
+portfolio_late_regime_shift,9,64,True,1.805,10,batch_09.csv
+portfolio_late_regime_shift,10,64,True,1.976,11,batch_10.csv
+portfolio_late_regime_shift,11,64,True,2.147,12,batch_11.csv

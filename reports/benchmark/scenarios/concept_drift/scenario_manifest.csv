@@ -1,0 +1,11 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+concept_drift,0,48,False,0.0,2,batch_00.csv
+concept_drift,1,48,False,0.0,3,batch_01.csv
+concept_drift,2,48,True,0.7,4,batch_02.csv
+concept_drift,3,48,True,0.826,5,batch_03.csv
+concept_drift,4,48,True,0.952,6,batch_04.csv
+concept_drift,5,48,True,1.078,7,batch_05.csv
+concept_drift,6,48,True,1.204,8,batch_06.csv
+concept_drift,7,48,True,1.33,9,batch_07.csv
+concept_drift,8,48,True,1.456,10,batch_08.csv
+concept_drift,9,48,True,1.582,11,batch_09.csv

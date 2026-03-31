@@ -1,0 +1,11 @@
+scenario_name,batch_index,rows,drift_active,severity,label_available_batch,path
+portfolio_concept_shift,0,64,False,0.0,1,batch_00.csv
+portfolio_concept_shift,1,64,False,0.0,2,batch_01.csv
+portfolio_concept_shift,2,64,True,0.8,3,batch_02.csv
+portfolio_concept_shift,3,64,True,0.944,4,batch_03.csv
+portfolio_concept_shift,4,64,True,1.088,5,batch_04.csv
+portfolio_concept_shift,5,64,True,1.232,6,batch_05.csv
+portfolio_concept_shift,6,64,True,1.376,7,batch_06.csv
+portfolio_concept_shift,7,64,True,1.52,8,batch_07.csv
+portfolio_concept_shift,8,64,True,1.664,9,batch_08.csv
+portfolio_concept_shift,9,64,True,1.808,10,batch_09.csv

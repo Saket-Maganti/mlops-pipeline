@@ -1,0 +1,12 @@
+{
+  "name": "label_shift",
+  "drift_type": "label",
+  "batch_size": 48,
+  "n_batches": 10,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.55,
+  "label_delay_batches": 2,
+  "seed": 43,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

@@ -1,0 +1,12 @@
+{
+  "name": "concept_drift",
+  "drift_type": "concept",
+  "batch_size": 48,
+  "n_batches": 10,
+  "drift_start_batch": 2,
+  "base_magnitude": 0.7,
+  "label_delay_batches": 2,
+  "seed": 44,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

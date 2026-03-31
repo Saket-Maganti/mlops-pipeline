@@ -1,0 +1,79 @@
+benchmark:
+  dataset_name: breast_cancer
+  initial_model_type: random_forest
+  initial_n_estimators: 180
+  initial_max_depth: 12
+  retrain_model_type: extra_trees
+  retrain_n_estimators: 260
+  retrain_max_depth: 20
+  degradation_threshold: 0.07
+  retrain_window_rows: 168
+  reference_mix_ratio: 0.20
+  promotion_validation_rows: 36
+  promotion_min_gain: 0.008
+  promotion_max_regression: 0.005
+  train_seconds_cost: 0.010
+  retrain_fixed_cost: 0.012
+  drift_penalty_weight: 0.10
+  recovery_weight: 0.34
+  batch_weight: 0.26
+  final_weight: 0.32
+  stability_weight: 0.12
+  inference_penalty_weight: 0.008
+  policies:
+    - name: no_retrain
+    - name: scheduled
+      interval_batches: 3
+    - name: threshold
+      drift_threshold: 0.20
+      min_labeled_rows: 28
+    - name: adaptive_window
+      drift_threshold: 0.14
+      min_labeled_rows: 56
+      consecutive_drift_trigger: 1
+    - name: challenger
+      drift_threshold: 0.14
+      min_labeled_rows: 56
+      expected_gain_threshold: 0.015
+      cooldown_batches: 2
+  scenarios:
+    - name: portfolio_mild_covariate
+      drift_type: covariate
+      batch_size: 64
+      n_batches: 8
+      drift_start_batch: 2
+      base_magnitude: 0.28
+      label_delay_batches: 0
+      seed: 61
+    - name: portfolio_severe_covariate
+      drift_type: covariate
+      batch_size: 64
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.85
+      label_delay_batches: 1
+      seed: 62
+    - name: portfolio_concept_shift
+      drift_type: concept
+      batch_size: 64
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.80
+      label_delay_batches: 1
+      seed: 63
+    - name: portfolio_hybrid_shift
+      drift_type: hybrid
+      batch_size: 64
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.88
+      label_delay_batches: 1
+      seed: 64
+    - name: portfolio_late_regime_shift
+      drift_type: hybrid
+      batch_size: 64
+      n_batches: 12
+      drift_start_batch: 4
+      base_magnitude: 0.95
+      label_delay_batches: 1
+      seed: 65

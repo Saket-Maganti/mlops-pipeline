@@ -1,0 +1,12 @@
+{
+  "name": "mild_covariate",
+  "drift_type": "covariate",
+  "batch_size": 48,
+  "n_batches": 8,
+  "drift_start_batch": 3,
+  "base_magnitude": 0.2,
+  "label_delay_batches": 0,
+  "seed": 41,
+  "train_size": 0.55,
+  "reference_size": 0.2
+}

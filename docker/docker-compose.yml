@@ -1,0 +1,120 @@
+version: "3.8"
+
+services:
+  # ── MLflow Tracking Server ──────────────────────────────────────────────────
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.10.2
+    container_name: mlops-mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      - MLFLOW_BACKEND_STORE_URI=sqlite:///mlflow/mlflow.db
+      - MLFLOW_ARTIFACT_ROOT=/mlflow/artifacts
+    volumes:
+      - mlflow_data:/mlflow
+    command: >
+      mlflow server
+        --backend-store-uri sqlite:///mlflow/mlflow.db
+        --default-artifact-root /mlflow/artifacts
+        --host 0.0.0.0
+        --port 5000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ── Inference API ───────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.api
+    container_name: mlops-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_DIR=/app/model_artifacts
+      - PREDICTIONS_LOG=/app/logs/predictions.jsonl
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    volumes:
+      - model_artifacts:/app/model_artifacts
+      - api_logs:/app/logs
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ── Training Container (run on demand) ────────────────────────────────────
+  trainer:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.training
+    container_name: mlops-trainer
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - MODEL_DIR=/app/model_artifacts
+    volumes:
+      - model_artifacts:/app/model_artifacts
+      - ./data:/app/data
+      - ./reports:/app/reports
+    depends_on:
+      - mlflow
+    profiles:
+      - train
+
+  benchmark:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.training
+    container_name: mlops-benchmark
+    command: ["python", "src/benchmark/runner.py", "--output-dir", "reports/benchmark", "--config", "configs/benchmark_config.yaml"]
+    volumes:
+      - ./:/app
+    profiles:
+      - benchmark
+
+  # ── Airflow (Standalone for dev) ────────────────────────────────────────────
+  airflow:
+    image: apache/airflow:2.8.1-python3.11
+    container_name: mlops-airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////airflow/airflow.db
+      - AIRFLOW__CORE__FERNET_KEY=your-fernet-key-here
+      - AIRFLOW__WEBSERVER__SECRET_KEY=your-secret-key-here
+      - AIRFLOW_VAR_MLOPS_BASE_DIR=/opt/airflow/mlops
+      - AIRFLOW_VAR_DRIFT_THRESHOLD=0.3
+      - AIRFLOW_VAR_API_URL=http://api:8000
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+      - ./:/opt/airflow/mlops
+    command: >
+      bash -c "airflow db init &&
+               airflow users create --username admin --firstname MLOps --lastname Admin
+                 --role Admin --email admin@mlops.local --password admin &&
+               airflow webserver & airflow scheduler"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+  # ── Monitoring Dashboard (Grafana-lite via simple HTML) ────────────────────
+  dashboard:
+    image: nginx:alpine
+    container_name: mlops-dashboard
+    ports:
+      - "3000:80"
+    volumes:
+      - ./dashboard:/usr/share/nginx/html:ro
+
+volumes:
+  mlflow_data:
+  model_artifacts:
+  api_logs:
+  airflow_logs:
+
+networks:
+  default:
+    name: mlops-network

@@ -1,0 +1,28 @@
+# MLOps Pipeline Configuration
+
+model:
+  name: wine-classifier
+  n_estimators: 100
+  max_depth: 10
+  random_state: 42
+  min_f1_threshold: 0.80
+
+drift:
+  threshold: 0.30
+  method: evidently  # evidently | psi
+  batch_size: 50
+  reference_window: 200
+
+training:
+  test_size: 0.20
+  schedule: "0 */6 * * *"  # every 6h
+
+aws:
+  region: us-east-1
+  ecr_repository: mlops-wine-classifier
+  lambda_function: mlops-wine-classifier
+  s3_bucket: mlops-artifacts-YOUR_ACCOUNT_ID
+
+mlflow:
+  experiment_name: wine-classifier-mlops
+  tracking_uri: http://localhost:5000

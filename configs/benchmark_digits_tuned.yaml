@@ -1,0 +1,71 @@
+benchmark:
+  dataset_name: digits
+  initial_model_type: random_forest
+  initial_n_estimators: 180
+  initial_max_depth: 14
+  retrain_model_type: extra_trees
+  retrain_n_estimators: 320
+  retrain_max_depth: 22
+  degradation_threshold: 0.06
+  retrain_window_rows: 224
+  reference_mix_ratio: 0.10
+  promotion_validation_rows: 56
+  promotion_min_gain: 0.002
+  promotion_max_regression: 0.002
+  train_seconds_cost: 0.004
+  retrain_fixed_cost: 0.006
+  drift_penalty_weight: 0.12
+  recovery_weight: 0.40
+  batch_weight: 0.22
+  final_weight: 0.36
+  stability_weight: 0.14
+  inference_penalty_weight: 0.006
+  policies:
+    - name: no_retrain
+    - name: scheduled
+      interval_batches: 4
+    - name: threshold
+      drift_threshold: 0.16
+      min_labeled_rows: 42
+    - name: adaptive_window
+      drift_threshold: 0.12
+      min_labeled_rows: 84
+      consecutive_drift_trigger: 1
+    - name: challenger
+      drift_threshold: 0.10
+      min_labeled_rows: 84
+      expected_gain_threshold: 0.010
+      cooldown_batches: 2
+  scenarios:
+    - name: digits_concept_shift
+      drift_type: concept
+      batch_size: 96
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.95
+      label_delay_batches: 1
+      seed: 71
+    - name: digits_hybrid_shift
+      drift_type: hybrid
+      batch_size: 96
+      n_batches: 10
+      drift_start_batch: 2
+      base_magnitude: 0.95
+      label_delay_batches: 1
+      seed: 72
+    - name: digits_late_break_shift
+      drift_type: hybrid
+      batch_size: 96
+      n_batches: 12
+      drift_start_batch: 5
+      base_magnitude: 1.05
+      label_delay_batches: 1
+      seed: 73
+    - name: digits_adaptive_window
+      drift_type: concept
+      batch_size: 96
+      n_batches: 12
+      drift_start_batch: 3
+      base_magnitude: 1.10
+      label_delay_batches: 1
+      seed: 74
